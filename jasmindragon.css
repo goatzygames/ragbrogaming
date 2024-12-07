@@ -1,13 +1,11 @@
-/* First font declaration */
 @font-face {
     font-family: "OtherFont";
-    src: url("/fonts/OtherFont.otf");
+    src: url("OtherFont.otf");
 }
 
-/* Second font declaration */
 @font-face {
     font-family: "OtherFont2";
-    src: url("/fonts/OtherFont2.woff");
+    src: url("OtherFont2.woff");
 }
 
 /* Global body styles */
