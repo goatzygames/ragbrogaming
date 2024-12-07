@@ -10,7 +10,7 @@
 
      <meta property="og:title" content="RagbroGaming">
 
-     <meta property="og:description" content="Content of RagbroGaming">
+     <meta property="og:description" content="Game projects made by a solo game developer, RagbroGaming">
 
      <meta property="og:url" content="https://goatzygames.github.io/ragbrogaming/">
 
@@ -23,13 +23,13 @@
 <body>
 
 <div class="TopHeader">
-    <img src="images/ragbrofavicon.png" style="height: 5vh; width: 7vh;">
-    <h2 id="TopHeaderMainText">Ragbro Gaming</h2>
-    <a href="javascript:DownButtonScroll()" style="margin-left: 30vh;"><h3>Projects</h3></a>
-    <a href="javascript:AboutMeScroll()" style="margin-left: 5vh;"><h3>About me</h3></a>
+    <img src="images/ragbrofavicon.png" style="height: 5vh; width: 5h;">
+    <h2 id="TopHeaderMainText">RagbroGaming</h2>
+    <a href="javascript:DownButtonScroll()" style="padding-left: 30vh;"><h3>Projects</h3></a>
+    <a href="javascript:AboutMeScroll()" style="padding-left: 5vh;"><h3>About me</h3></a>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br>
-<h1 style="text-align: center;">Ragbro Gaming Projects</h1>
+<h1 style="text-align: center;" class="MainTypeWriterText">RagbroGaming Projects</h1>
 <br><br><br><br><br><br><br><br>
 <button onclick="DownButtonScroll()"class="DownButton" style="align-self: center; text-align: center; justify-content: center; display: flex; font-size: xx-large; height: 6vh; width: 6vh; text-align: center;">ᐯ</button>
  
@@ -44,11 +44,16 @@
 
     <div class="FlappyBirdProject" style="margin: 2vh;">
         <h2 style="text-align: center;">Flappy bird<br><h3 style="text-align: center; padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3></h2>
-        <button style="border: 0px; background: none"><a href="https://drive.google.com/uc?export=download&id=1oYhIZdWDP2lWxcFIddTpVOO8vmbPLHyZ" download="Flappy_Bird" style="text-align: center; box-shadow: 1vh 1vh 3vh black; border-radius: 15px; padding: 8px;">Download Flappy Bird</a></button><br><br>
+        <button style="border: 0px; background: none"><a href="https://drive.google.com/uc?export=download&id=1oYhIZdWDP2lWxcFIddTpVOO8vmbPLHyZ" download="Flappy_Bird" onclick="FlappyBirdDownloading(); downloadFromDrive()">Download Flappy Bird</a></button><br><br>
+        <h2 id="DownloaderText"></h2>
     </div>
 
     <div class="TheJasminDragonProject" style="margin: 2vh;">
-        <h2 style="text-align: center;">The Jasmin Dragon<br><h3 style="text-align: center; padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3></h2></h2>
+        <h2 style="text-align: center;">The Jasmin Dragon<br><h3 style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3></h2></h2>
+        <a href="jasmindragon.html" target="_blank"><button style="display: flex; margin: auto; margin-right: 43%; font-size: large;">About</button></a>
+        <div class="JasminDragonPic" style="display: flex; justify-content: center; align-items: center; padding: 5vh;">
+            <img src="images/jasmindragonpic1.png" style="width: 65vh; height: 35vh; border: 2px solid gray; border-radius: 15px;">
+        </div>
     </div>
 </div>
 
@@ -60,10 +65,10 @@
 <p id="ScrollAboutMe"></p><br><br><br><br>
 <div class="AboutMeSection"> 
     
-<h1 style="text-align: center;">About Me</h1>
+<h1 style="text-align: left;">About Me</h1>
 <div class="AboutMe" style="margin: 2vh;">
 
-    <section style="line-height: 1.6; color: #333; padding: 5vh; color: white;">
+    <section style="line-height: 1.6; color: #242424; padding: 5vh; color: white;">
         <h2 style="font-size: 2rem; color: #f6ff00; font-weight: bold;">Hello, I'm Rag!</h2>
         <p style="font-size: 1.2rem; margin-bottom: 10px;">
             I'm a 29-year-old gamer from Sweden, living with my wonderful wife. Gaming has always been a huge part of my life, but over the years, I've expanded my passions into game development.
@@ -72,7 +77,7 @@
             Currently, I'm working on a very exciting project: <strong><em>An RPG set in the world of Avatar: The Last Airbender</em></strong>, using <strong>Unreal Engine</strong>. This project, called <strong><em>The Jasmin Dragon</em></strong>, aims to bring fans of the series an immersive adventure.
         </p>
         <p style="font-size: 1.2rem; margin-bottom: 10px;">
-            You can follow my journey as a developer on my <a href="https://www.youtube.com/channel/UCerrEKioqF5CTR7J7MiR_bg" target="_blank" style="color: #ff3223; font-weight: bold;">YouTube channel</a>, where I regularly post devlogs and updates about the game. Join me as I bring this project to life!
+            You can follow my journey as a developer on my <a href="https://www.youtube.com/channel/UCerrEKioqF5CTR7J7MiR_bg" target="_blank" style="color: #ff3223; font-weight: bold;">YouTube channel</a> and my <a href="https://discord.gg/tYrCDyjsat" target="_blank" style="color: #2600ff; font-weight: bold;">Discord</a> where I regularly post devlogs and updates about the game. Join me as I bring this project to life!
         </p>
     </section>
     
