@@ -1,12 +1,18 @@
-/* Font settings */
+/* First font declaration */
 @font-face {
-    font-family: "CoderFont";
-    src: url("../fonts/OtherFont.otf");
+    font-family: "OtherFont";
+    src: url("/fonts/OtherFont.otf");
+}
+
+/* Second font declaration */
+@font-face {
+    font-family: "OtherFont2";
+    src: url("/fonts/OtherFont2.woff");
 }
 
 /* Global body styles */
 body {
-    font-family: "CoderFont", sans-serif;
+    font-family: "OtherFont", "OtherFont2", sans-serif; /* Fallback font */
     box-shadow: 2vh 2vh 6vh;
     border-radius: 5vh;
     box-sizing: content-box;
@@ -16,6 +22,7 @@ body {
     max-width: 1200px; /* Limit the width on larger screens */
     padding: 2%;
 }
+
 
 /* Top header styling */
 .TopHeader {
@@ -45,6 +52,7 @@ a {
     color: white;
     text-decoration: none;
     margin: 0 2vh;
+    font-family: OtherFont, OtherFont2s;
 }
 
 a:hover {

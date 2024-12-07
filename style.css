@@ -1,12 +1,15 @@
 /* Font settings */
 @font-face {
-    font-family: "CoderFont";
+    font-family: "OtherFont";
     src: url("../fonts/OtherFont.otf");
+    
+    font-family: "OtherFont2";
+    src: url("../fonts/OtherFont2.woff");
 }
 
 /* Global body styles */
 body {
-    font-family: "CoderFont", sans-serif;
+    font-family: OtherFont, OtherFont2;
     box-shadow: 2vh 2vh 6vh;
     border-radius: 5vh;
     box-sizing: content-box;
