@@ -9,7 +9,7 @@
 
 /* Global body styles */
 body {
-    font-family: OtherFont, OtherFont2;
+    font-family: "OtherFont", "OtherFont2";
     box-shadow: 2vh 2vh 6vh;
     border-radius: 5vh;
     box-sizing: content-box;
