@@ -19,25 +19,37 @@ body {
     margin: 0 auto; /* Center the body for larger screens */
     max-width: 1200px; /* Limit the width on larger screens */
     padding: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 
-/* Top header styling */
 .TopHeader {
     position: fixed;
     box-shadow: 1vh 1vh 3vh;
-    width: calc(100% - 4%);
+    width: 100%;
+    max-width: 100%; /* Constrain the header's width to 90% of the viewport */
     padding: 0.6vh;
     border-radius: 2vh;
     white-space: nowrap;
-    overflow-x: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center content vertically */
     backdrop-filter: blur(4.5px);
     border: 1px solid gray;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+    left: 50%; /* Center header horizontally */
+    transform: translateX(-50%);
+    margin: 0 auto; /* Ensure the header stays centered */
+    box-sizing: border-box; /* Include padding and border in the element's total width/height */
+}
+
+/* Ensure child elements of TopHeader are constrained */
+.TopHeader > * {
+    max-width: 100%; /* Prevent individual items from overflowing the header */
+    overflow: hidden; /* Clip any overflowing content */
+    text-overflow: ellipsis; /* Add ellipsis (...) if text overflows */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 /* Main text inside TopHeader */

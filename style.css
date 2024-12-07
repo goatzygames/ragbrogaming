@@ -20,30 +20,42 @@ body {
     margin-right: 20%;
 }
 
-/* Top header styling */
 .TopHeader {
     position: fixed;
     box-shadow: 1vh 1vh 3vh;
     width: 100%;
+    max-width: 90%; /* Constrain the header's width to 90% of the viewport */
     padding: 0.6vh;
     border-radius: 2vh;
     white-space: nowrap;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center content vertically */
     backdrop-filter: blur(4.5px);
     border: 1px solid gray;
-    left: 70%;
-    transform: translateX(-50%);  /* This will center the header */
-    margin: auto;
+    left: 45%; /* Center header horizontally */
+    transform: translateX(-50%);
+    margin: 0 auto; /* Ensure the header stays centered */
+    box-sizing: border-box; /* Include padding and border in the element's total width/height */
 }
 
-/* For responsiveness, adjust top header margin for smaller screens */
+/* Ensure child elements of TopHeader are constrained */
+.TopHeader > * {
+    max-width: 100%; /* Prevent individual items from overflowing the header */
+    overflow: hidden; /* Clip any overflowing content */
+    text-overflow: ellipsis; /* Add ellipsis (...) if text overflows */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* For smaller screens */
 @media screen and (max-width: 768px) {
     .TopHeader {
-        left: 50%;
-        transform: translateX(-50%);
+        padding: 1vh; /* Adjust padding for smaller screens */
+        max-width: 95%; /* Reduce header width on smaller screens */
     }
 }
+
 
 
 /* Main text inside TopHeader */
