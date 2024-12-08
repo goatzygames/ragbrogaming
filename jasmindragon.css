@@ -243,3 +243,160 @@ button {
     from, to { border-color: transparent }
     50% { border-color: white; }
 }
+
+.commentcontainer {
+    background: #2f2f2f;
+    padding: 0 20px;
+    width: 500px;
+    box-shadow: 0 0 5px black;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.head {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.text {
+    margin: 10px 0;
+    font-size: 0.9em;
+    font-family: "OtherFont, OtherFont2";
+}
+
+.commentbox {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.commentbox > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content {
+    width: 100%;
+    box-shadow: 5px 5px 15px black;
+    padding: 25px;
+    border-radius: 30px;
+}
+
+.user {
+    border: none;
+    outline: none;
+    margin: 5px 0;
+    color: gray;
+    margin-left: 20px;
+}
+
+.commentinput > input {
+    border: none;
+    padding: 10px;
+    padding-left: 0;
+    outline: none;
+    border-bottom: 2.5px solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+    width: 95%;
+    background-color:#2F2F2F;
+}
+
+.policy {
+    margin: 20px 0;
+    font-size: 0.8em;
+    color: gray;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+}
+
+.comments {
+    width: 100%;
+    max-width: 500px; /* Keeps the width consistent with your .commentcontainer */
+    margin-top: 20px;
+}
+
+.parents {
+    display: flex;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    background-color: #282828;
+    box-sizing: border-box;
+    max-width: 100%; /* Ensures it doesn't exceed the parent container */
+}
+
+.parents img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.parents > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.parents > div {
+    flex: 1;
+}
+
+.parents h1 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.parents p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.engagements img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.engagements img:nth-child(1) {
+    margin-right: 10px;
+    width: 25px;
+}
+
+.date {
+    font-size: 0.8em;
+    color: gray;
+}
+
+#CommenterStyle {
+    box-shadow: 5px 5px 15px black;
+}
+
+.head {
+    box-shadow: 5px 5px 15px black;
+    border-radius: 20px;
+    background: rgb(63, 63, 63);
+    padding: 15px;
+}
+
+.usercomment {
+    color: white;
+    font-family: "OtherFont, OtherFont2";
+}
