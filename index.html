@@ -1,140 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Goatzy Codes</title>
-<link rel="stylesheet" href="style.css">
+<title>Ragbro Gaming</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <title>Goatzy's Codes</title>
+     <link rel="icon" type="image/x-icon" href="images/ragbrofavicon.png">
+     <link rel="stylesheet" href="style.css"> 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Goatzy's Codes</title>
-<link rel="icon" type="image/x-icon" href="images/blueglossygoat.png">
-<link rel="stylesheet" href="style.css"> 
+     <meta property="og:title" content="RagbroGaming">
 
-<meta property="og:title" content="Goatzy's Codes">
+     <meta property="og:description" content="Game projects made by a solo game developer, RagbroGaming">
 
-<meta property="og:description" content="Goatzy is making learning projects here...">
+     <meta property="og:url" content="https://goatzygames.github.io/ragbrogaming/">
 
-<meta property="og:url" content="https://goatzy-codes.xyz">
+     <meta property="og:image" content="https://i.ibb.co/3cbP4wM/ragbrogamingicon.png" alt="ragbrogamingicon">
 
-<meta property="og:image" content="https://i.ibb.co/YBjLSt7/blueglossygoat.png">
+     <meta property="og:type" content="website">
 
-<meta property="og:type" content="website">
-
-<meta property="og:site_name" content="Goatzy's Codes">
+     <meta property="og:site_name" content="RagbroGaming">
 </head>
-<body onload="SetTime()">
-
-    <br><br><br><br>
-
-<div class="TopHeader">
-    <h2 style="left: 5vh" id="MenuButton" onclick="DebugMenu()">☰</h2>
-    <br>
-    <span id="GoatzyCodesText">Goatzy Codes</span>
-
-    <a onclick="location.reload()" id="OpenHome"><span>Home</span></a>
-    <a href="News/news.html" id="OpenHome"><span>News!</span></a>
-</div>
-
-
-<div class="TheMenu">
-    <h2>The Menu</h2>
-    <hr id="CheckMenu">
-    <div style="box-shadow: 1vh 1vh 2vh; border-radius: 2vh;">
-        <label for="MusicInput">Music On/Off</label>
-        <input id="MusicInput" type="checkbox">
-    </div>
-    <hr>
-
-</div>
-
-<div class="FirstBody">
-    <h1 id="Welcome" style="font-size: xxx-large; font-weight: 700;">Does not work</h1>
-    <div class="SecondBody" style="box-shadow: 2vh 2vh 3vh; border-radius: 3vh;">
-        <br>
-    <hr id="HrElement">
-      <div class="AboutMe" style="display: flex; text-align: center; margin-right: 50%; margin: auto; padding-left: 25%;">
-        <img src="images/blueglossygoat.png" style="width: 8vh; height: 8vh;">
-        <h1 style="font-weight: 400;">About Me, Goatzy</h1>
-        <a href="aboutme.html" target="_blank"><button style="height: min-content; margin: auto; width: 100%;">About Me</button></a>
-      </div>
-    <hr>
-
-        <h3 style="font-weight: 400;">Hi! <br> Here are all of the projects I am currently working on with HTML, CSS and JAVASCRIPT! <br> If you got suggestions for me then email me in down below!</h3><hr id="HrElement">
-    
-         <div class="ThirdBody">
-            <h1 style="font-weight: 550;">Work Section</h1>
-            <br>
-            <div class="Project">
-            <h1>Calculator Project</h1>
-            <img src="images/calculatorprojectpng.png" style="width: 80%; height: 80%vh;">
-            <button style="font-size: x-large; width: 80%; height: 6vh;" onclick="OpenCounter()">Calculator</button>
-            <script>
-                function OpenCounter() {
-                    window.open("calculator.html", "_blank")
-                }
-            </script>
-            </div>
-            <br>
-            <div class="Project">
-                <h1>Counter Project</h1>
-                <img src="images/counterimg.png" style="width: 80%; height: 80%vh;">
-                <a href="counter.html" target="_blank"><button style="font-size: x-large; width: 80%; height: 6vh;">Counter</button></a>
-                <script>
-                </script>
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
-
+<body>
 <br><br>
-<br>
-<br>
+<div class="TopHeader" style="font-family: OtherFont, OtherFont2;">
+    <img src="images/ragbrofavicon.png" style="height: 5vh; width: 5h; left: 30%; right: 20%;">
+    <h2 id="TopHeaderMainText">RagbroGaming</h2>
+    <a href="javascript:DownButtonScroll()" style="padding-left: 30vh; font-family: OtherFont, OtherFont2;"><h3>Projects</h3></a>
+    <a href="javascript:AboutMeScroll()" style="padding-left: 5vh;"><h3>About me</h3></a>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+<h1 style="text-align: center;" class="MainTypeWriterText">RagbroGaming Projects</h1>
+<br><br><br><br><br><br><br><br>
+<button onclick="DownButtonScroll()"class="DownButton" style="align-self: center; text-align: center; justify-content: center; display: flex; font-size: xx-large; height: 6vh; width: 6vh; text-align: center;">ᐯ</button>
+ 
+<br><br><br><br><br><br>
 
-<div id="StartComment" class="commentcontainer" style="font-family: Oswald;">
-    <br><a href="404.html">
-    <button id="AboutComments" style="align-self: center; text-align: center;">About</button></a><br>
-    <div class="head"><br>
-        <br><h1>What do you think of my projects?</h1>
-        <a href="#publish">Click here to scroll down...</a>
-        <br><br><i>This will send the message to me, but still will save on your own device.</i>
+<h1 style="text-align: center;">Welcome to RagbroGaming.com<br><h3 style="text-align: center;">Here is all of my projects and links!</h3></h1>
+
+<br><br><p id="ProjectsTarget"></p><br><br>
+
+<div class="Projects" style="margin: 5vh;"><br>
+    <h1 style="text-align: left; margin-left: 5%;">Projects</h1>
+
+    <div class="FlappyBirdProject" style="margin: 2vh;">
+        <h2 style="text-align: center;">Flappy bird<br><h3 style="text-align: center; padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3></h2>
+        <button style="border: 0px; background: none"><a href="https://drive.google.com/uc?export=download&id=1oYhIZdWDP2lWxcFIddTpVOO8vmbPLHyZ" download="Flappy_Bird" onclick="FlappyBirdDownloading(); downloadFromDrive()">Download Flappy Bird</a></button><br><br>
+        <h2 id="DownloaderText"></h2>
     </div>
-    <div>
-        <span id="Comment">0</span> Comments
-    </div>
-    <div class="text">
-        <p>I will be happy to hear from you!</p>
-    </div>
-    <div class="comments"></div>
-    <div class="commentbox">
-        <img src="commenterpng.png" alt="Commenter" id="CommenterStyle">
-        <div class="content">
-            <h2>Comment as:</h2>
-            <input  id="UserCommentInput" type="text" value="default@gmail" class="user">
-            <div class="commentinput">
-                <input id="input" type="text" placeholder="Enter your comment..." class="usercomment">
-                <div class="buttons">
-                    <button type="submit" id="publish">Publish</button>
-                </div>
-            </div>
-            <p class="policy">This site is protected by reCAPTCHA and the Google 
-                <a href="404.html">Privacy Policy</a> and <a href="404.html">Terms of Service</a> apply.
-            </p>
+
+    <div class="TheJasminDragonProject" style="margin: 2vh;">
+        <h2 style="text-align: center;">The Jasmin Dragon<br><h3 style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3></h2></h2>
+        <a href="jasmindragon.html" target="_blank"><button style="display: flex; margin: auto; margin-right: 43%; font-size: large;">About</button></a>
+        <div class="JasminDragonPic" style="display: flex; justify-content: center; align-items: center; padding: 5vh;">
+            <img src="images/jasmindragonpic1.png" style="width: 65vh; height: 35vh; border: 2px solid gray; border-radius: 15px;">
         </div>
-    </div>    
-</div>    
+    </div>
+</div>
 
 <br><br><br><br>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<hr>
 
-<script>
-    (function() {
-        emailjs.init("ielvIvKjqE4aMzpzy");
-    })();
-</script>
+<br><br><br><br>
+<p id="ScrollAboutMe"></p><br><br><br><br>
+<div class="AboutMeSection"> 
+    
+<h1 style="text-align: left;">About Me</h1>
+<div class="AboutMe" style="margin: 2vh;">
 
+    <section style="line-height: 1.6; color: #242424; padding: 5vh; color: white;">
+        <h2 style="font-size: 2rem; color: #f6ff00; font-weight: bold;">Hello, I'm Rag!</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 10px;">
+            I'm a 29-year-old gamer from Sweden, living with my wonderful wife. Gaming has always been a huge part of my life, but over the years, I've expanded my passions into game development.
+        </p>
+        <p style="font-size: 1.2rem; margin-bottom: 10px;">
+            Currently, I'm working on a very exciting project: <strong><em>An RPG set in the world of Avatar: The Last Airbender</em></strong>, using <strong>Unreal Engine</strong>. This project, called <strong><em>The Jasmin Dragon</em></strong>, aims to bring fans of the series an immersive adventure.
+        </p>
+        <p style="font-size: 1.2rem; margin-bottom: 10px;">
+            You can follow my journey as a developer on my <a href="https://www.youtube.com/channel/UCerrEKioqF5CTR7J7MiR_bg" target="_blank" style="color: #ff3223; font-weight: bold;">YouTube channel</a> and my <a href="https://discord.gg/tYrCDyjsat" target="_blank" style="color: #2600ff; font-weight: bold;">Discord</a> where I regularly post devlogs and updates about the game. Join me as I bring this project to life!
+        </p>
+    </section>
+    
+</div>
+</div>
 
+<br><br><br>
+
+<div class="CREDITS" style="border: 1px solid gray; background-color: black; text-align: left; padding-left: 5vh; color: white; margin: auto; padding: 2vh; border-radius: 2vh;">
+    <h3>All credits go to @Goatzy, everything you see here is developed by him. </h3>
+    <a href="https://www.goatzy-codes.xyz">Goatzy's Website</a>
+    </div>
 
 <script src="index.js"></script>
 </body>

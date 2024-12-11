@@ -1,68 +1,47 @@
-window.onload = SetTime();
-
-document.getElementById("MenuButton").onclick = function () {
-    console.log("Hey it works!")
-    let LitTheMenu = document.getElementsByClassName("TheMenu")[0];  // Use class instead of id
-
-    let LitTheMenuVis = getComputedStyle(LitTheMenu).visibility;  // Check computed visibility
-
-    console.log(LitTheMenu)
-
-    // Assuming canClickMenu is true for this example
-    let canClickMenu = true;
-
-    if (canClickMenu) {
-        if (LitTheMenuVis === "visible") {
-            LitTheMenu.style.visibility = "hidden"; 
-        } else {
-            LitTheMenu.style.visibility = "visible"; 
-        }
-    }
-}
-
-    // Create the audio object
-    var buttonclick1 = new Audio("Sounds/buttonclick1.mp3");
-
-    // Get all button elements on the page
-    var buttons = document.querySelectorAll("button");
-
-    // Loop through all buttons and add event listeners
-    buttons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            // If the sound is already playing, reset it to start from the beginning
-            if (!buttonclick1.paused) {
-                buttonclick1.currentTime = 0; // Reset the sound to the start
-            }
-            buttonclick1.play();  // Play sound when any button is clicked
-        });
+function DownButtonScroll() {
+    document.getElementById("ProjectsTarget").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
     });
-
-// Create the audio object for the elevator music
-var ElevatorMusic = new Audio("Sounds/elevatormusic.mp3");
-
-// Function to enable scrolling and play the music
-function enableScrollAndPlayMusic() {
-    // Enable scrolling
-    document.body.style.overflow = "auto"; // Allow scrolling
-    
-    // Play the elevator music
-    ElevatorMusic.loop = true; // Loop the music
-    ElevatorMusic.play(); // Play the music
-    canClickMenu = true;
 }
 
-let isMusicPlaying = false;
+function AboutMeScroll() {
+    document.getElementById("ScrollAboutMe").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
 
-document.getElementById("MusicInput").addEventListener('click', function() {
-    if (isMusicPlaying) {
-        ElevatorMusic.pause();
-        ElevatorMusic.currentTime = 0;
-        isMusicPlaying = false;
+let hasClickedDownloadFlappy = false;
+
+function FlappyBirdDownloading() {
+    if (!hasClickedDownloadFlappy) {
+        document.getElementById("DownloaderText").innerHTML = "Downloading...";
+        hasClickedDownloadFlappy = true;
     } else {
-        ElevatorMusic.play()
-        isMusicPlaying = true;
+        alert("Already downloading!");
     }
-});
+}
+
+function downloadAndReloadOrRedirect() {
+    const driveLink = "https://drive.google.com/uc?id=1oYhIZdWDP2lWxcFIddTpVOO8vmbPLHyZ&export=download";
+
+    const a = document.createElement("a");
+    a.href = driveLink;
+    a.download = "";
+    document.body.appendChild(a);
+
+
+    a.click();
+
+    document.body.removeChild(a);
+
+    setTimeout(() => {
+
+        window.location.reload();
+
+    }, 2000);
+}
 
 "use strict";
 
@@ -106,8 +85,8 @@ function addPost() {
     if (!userComment.value) return;
 
     // Set the user name from the input
-    userId.name = userName.value || "default@gmail"; // If no name, set default to "Anonymouse"
-    if (userId.name === "default@gmail") {
+    userId.name = userName.value || "Anonymouse"; // If no name, set default to "Anonymouse"
+    if (userId.name === "Anonymouse") {
         userId.identity = false;
         userId.image = "anonymousecommenter.png";
     } else {
@@ -160,7 +139,7 @@ function updateCommentCount() {
 function sendEmail(userId) {
     const templateParams = {
         to_name: "dev@goatzy-codes.xyz", // my email
-        from_name: userId.name || "default@gmail", // name of the commenter
+        from_name: userId.name || "Anonymouse", // name of the commenter
         message: userId.message, // the comment message
     };
 
@@ -174,29 +153,3 @@ function sendEmail(userId) {
 
 // Attach event listener to the publish button
 publishBtn.addEventListener("click", addPost);
-
-function SetTime() {
-    let now = new Date()
-    let hours = now.getHours()
-    let minutes = now.getMinutes()
-    console.log(`Hmm, what is the bug here..?`)
-
-    if (hours >= 6 && hours < 12) {
-        let message = "🌞Good morning";
-        document.getElementById("Welcome").textContent = `${message}! Tell me down below how you feel about my codes!`;
-    } else if (hours >= 12 && hours < 18) {
-        let message = "🕑Good afternoon";
-        document.getElementById("Welcome").textContent = `${message}! Here are some of my small projects!`;
-    } else {
-        let message = "🌃Good evening";
-        document.getElementById("Welcome").textContent = `${message}! Check out some codes I've made!`;
-    }
-}
-
-function OpenAboutMe() {
-    window.location.href = "aboutme.html"
-}
-
-function OpenRealCounter() {
-    window.location.href = "counter.html"
-}
