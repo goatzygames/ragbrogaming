@@ -46,6 +46,8 @@ body {
     overflow: hidden; /* Clip any overflowing content */
     text-overflow: ellipsis; /* Add ellipsis (...) if text overflows */
     white-space: nowrap; /* Prevent text from wrapping */
+    left: 20%;
+    right: 20%;
 }
 
 /* For smaller screens */
