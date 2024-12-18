@@ -20,21 +20,25 @@ body {
     margin-right: 20%;
 }
 
+input {
+    font-family: "OtherFont", "OtherFont2"
+}
+
 .TopHeader {
     position: fixed;
     box-shadow: 1vh 1vh 3vh;
     width: 100%;
     max-width: 90%; /* Constrain the header's width to 90% of the viewport */
-    padding: 0.6vh;
+    padding-left: 2vh; /* Adjust padding to add horizontal spacing */
     border-radius: 2vh;
     white-space: nowrap;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex;
-    justify-content: space-between; /* Distribute items evenly */
+    justify-content: flex-start;
     align-items: center; /* Center content vertically */
     backdrop-filter: blur(4.5px);
     border: 1px solid gray;
-    left: 45%; /* Center header horizontally */
+    left: 50%; /* Center header horizontally */
     transform: translateX(-50%);
     margin: 0 auto; /* Ensure the header stays centered */
     box-sizing: border-box; /* Include padding and border in the element's total width/height */
@@ -42,28 +46,39 @@ body {
 
 /* Ensure child elements of TopHeader are constrained */
 .TopHeader > * {
-    max-width: 100%; /* Prevent individual items from overflowing the header */
+    margin: 0 1vh; /* Add consistent spacing between elements */
     overflow: hidden; /* Clip any overflowing content */
-    text-overflow: ellipsis; /* Add ellipsis (...) if text overflows */
     white-space: nowrap; /* Prevent text from wrapping */
-    left: 20%;
-    right: 20%;
+}
+
+.TopHeader a, p {
+    flex-direction: row;
+    padding: 1.5vh;
+    text-decoration: none;
+    font-size: 16px;
+    color: inherit;
+}
+
+/* Main text inside TopHeader */
+#TopHeaderMainText {
+    text-overflow: ellipsis; /* Prevent long text from overflowing */
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default padding */
 }
 
 /* For smaller screens */
 @media screen and (max-width: 768px) {
     .TopHeader {
-        padding: 1vh; /* Adjust padding for smaller screens */
+        padding: 1vh 1.5vh; /* Adjust padding for smaller screens */
         max-width: 95%; /* Reduce header width on smaller screens */
+        left: 1;
+    }
+
+    .TopHeader > * {
+        margin: 0 0.5vh; /* Adjust spacing between elements */
     }
 }
 
-
-
-/* Main text inside TopHeader */
-#TopHeaderMainText {
-    margin-left: 5%;
-}
 
 /* Link styling */
 a {
@@ -136,6 +151,7 @@ button {
     border: none;
     padding: 1.5vh;
     box-shadow: 1vh 1vh 3vh black;
+    font-family: "OtherFont, OtherFont2";
 }
 
 button:active {
@@ -145,10 +161,6 @@ button:active {
 
 button:hover {
     background-color: rgb(49, 49, 49);
-}
-
-button {
-    font-family: CoderFont;
 }
 
 /* Button active animation */

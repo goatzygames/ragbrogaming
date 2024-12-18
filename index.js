@@ -45,6 +45,7 @@ function downloadAndReloadOrRedirect() {
 
 "use strict";
 
+// Object to hold user data for the comment
 const userId = {
     name: null,
     identity: null,
@@ -53,6 +54,7 @@ const userId = {
     date: null
 };
 
+// Select DOM elements
 const userComment = document.querySelector(".usercomment");
 const publishBtn = document.querySelector("#publish");
 const comments = document.querySelector(".comments");
@@ -68,8 +70,8 @@ window.onload = function() {
 };
 
 // Enable or disable the publish button based on user input
-userComment.addEventListener("input", e => {
-    if (!userComment.value) {
+userComment.addEventListener("input", () => {
+    if (!userComment.value.trim()) {
         publishBtn.setAttribute("disabled", "disabled");
         publishBtn.classList.remove("abled");
     } else {
@@ -78,14 +80,15 @@ userComment.addEventListener("input", e => {
     }
 });
 
-// Function to add a comment
+// Function to handle the posting of a comment
 function addPost() {
     console.log("The button works");
 
-    if (!userComment.value) return;
+    // Ensure there's a message to post
+    if (!userComment.value.trim()) return;
 
     // Set the user name from the input
-    userId.name = userName.value || "Anonymouse"; // If no name, set default to "Anonymouse"
+    userId.name = userName.value.trim() || "Anonymouse"; // If no name, set default to "Anonymouse"
     if (userId.name === "Anonymouse") {
         userId.identity = false;
         userId.image = "anonymousecommenter.png";
@@ -94,11 +97,11 @@ function addPost() {
         userId.image = "commenterpng.png";
     }
 
-    userId.message = userComment.value;
+    userId.message = userComment.value.trim();
     userId.date = new Date().toLocaleString();
 
     // Create the HTML for the new comment
-    let published = `
+    const published = `
         <div class="parents">
             <img src="${userId.image}" alt="User Image">
             <div>
@@ -119,28 +122,30 @@ function addPost() {
     // Save the updated comments to localStorage
     localStorage.setItem("comments", comments.innerHTML);
 
-    // Reset the input field
+    // Reset the input fields
     userComment.value = "";
-    
+
     // Update the comment count
     updateCommentCount();
 
     // Send the comment via EmailJS
     sendEmail(userId);
+
+    console.log("Email is sent.");
 }
 
 // Function to update the comment count
 function updateCommentCount() {
-    let commentsNum = document.querySelectorAll(".parents").length;
+    const commentsNum = document.querySelectorAll(".parents").length;
     document.getElementById("Comment").textContent = commentsNum;
 }
 
 // Function to send email using EmailJS
 function sendEmail(userId) {
     const templateParams = {
-        to_name: "dev@goatzy-codes.xyz", // my email
-        from_name: userId.name || "Anonymouse", // name of the commenter
-        message: userId.message, // the comment message
+        to_name: "dev@goatzy-codes.xyz", // Your email
+        from_name: userId.name || "Anonymouse", // Name of the commenter
+        message: userId.message, // The comment message
     };
 
     emailjs.send("service_h35zvc7", "template_q5opft8", templateParams)
@@ -152,4 +157,14 @@ function sendEmail(userId) {
 }
 
 // Attach event listener to the publish button
-publishBtn.addEventListener("click", addPost);
+publishBtn.addEventListener("click", function(){
+        // Ensure the userName (email) is valid
+        if (!userName.value || userName.value.trim() === "default@gmail.com") {
+            alert("Please enter your actual email so I can contact you when I see the request.");
+            console.log("Invalid email entered");
+            return;
+        } else {
+            console.log("Email validation passed");
+            addPost();
+        }
+});
