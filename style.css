@@ -42,6 +42,7 @@ input {
     transform: translateX(-50%);
     margin: 0 auto; /* Ensure the header stays centered */
     box-sizing: border-box; /* Include padding and border in the element's total width/height */
+    z-index: 100;
 }
 
 /* Ensure child elements of TopHeader are constrained */
@@ -108,16 +109,27 @@ a:hover {
 
 /* Button styling */
 .DownButton {
-    justify-content: center;
-    text-align: center;
     align-self: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     background-color: black;
     color: white;
     border: 1px solid white;
     border-radius: 40px;
+    font-size: 1.5rem;
+    height: 6vh;
+    width: 6vh;
+    cursor: pointer;
+    box-shadow: 1vh 1vh 3vh black;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     animation: DownButtonAnim 2s ease-in-out infinite;
+}
+
+.DownButton:hover {
+    background-color: rgb(49, 49, 49);
+    transform: scale(1.1);
 }
 
 @keyframes DownButtonAnim {
@@ -290,33 +302,22 @@ button:hover {
 
 .commentcontainer {
     background: #2f2f2f;
-    padding: 0 20px;
+    padding: 20px;
     width: 500px;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
     border-radius: 15px;
-    margin: 0 auto;
+    margin: 20px auto;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
-.head {
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.text {
-    margin: 10px 0;
-    font-size: 0.9em;
-    font-family: "OtherFont, OtherFont2";
-}
-
-.commentbox {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
+.commentcontainer:hover {
+    transform: scale(1.03); /* Slight hover enlargement */
+    background-color: #3b3b3b; /* Slightly brighter hover effect */
 }
 
 .commentbox > img {
-    width: 40px;
-    height: 40px;
+    width: 50px; /* Larger for better focus */
+    height: 50px;
     border-radius: 50%;
     margin-right: 20px;
     object-fit: cover;
@@ -325,117 +326,204 @@ button:hover {
 
 .content {
     width: 100%;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 25px;
-    border-radius: 30px;
-}
-
-.user {
-    border: none;
-    outline: none;
-    margin: 5px 0;
-    color: gray;
-    margin-left: 20px;
+    border-radius: 20px;
+    background-color: #383838; /* Slightly lighter background for contrast */
 }
 
 .commentinput > input {
     border: none;
     padding: 10px;
-    padding-left: 0;
     outline: none;
-    border-bottom: 2.5px solid rgb(255, 255, 255);
+    border-bottom: 2px solid white;
     margin-bottom: 10px;
     width: 95%;
-    background-color:#2F2F2F;
+    background-color: rgba(0, 0, 0, 0);
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.commentinput > input:focus {
+    border-bottom: 2px solid #ffa500; /* Highlight border on focus */
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .policy {
-    margin: 20px 0;
     font-size: 0.8em;
-    color: gray;
+    color: #a0a0a0; /* Softer gray for readability */
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: gray;
-}
-
-.comments {
-    width: 100%;
-    max-width: 500px; /* Keeps the width consistent with your .commentcontainer */
-    margin-top: 20px;
-}
-
-.parents {
-    display: flex;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #555555;
-    border-radius: 5px;
+.buttons button {
     background-color: #282828;
-    box-sizing: border-box;
-    max-width: 100%; /* Ensures it doesn't exceed the parent container */
+    color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
-.parents img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
+.buttons button:hover {
+    background-color: #ffa500;
+    color: black;
+    transform: scale(1.05);
 }
 
-.parents > img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
-    object-position: center;
+
+.announcements {
+    border: 2px solid #ffa500; /* Change border to a bright color, like orange */
+    border-radius: 2vh;
+    background-color: #1e1e1e; /* Use a darker background for better contrast */
+    padding: 2vh;
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.5); /* Add an eye-catching shadow */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth hover effects */
 }
 
-.parents > div {
-    flex: 1;
+.announcements:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+    background-color: #563800; /* Highlight with the border color */
+    color: #808080; /* Ensure text is legible on hover */
 }
 
-.parents h1 {
-    margin: 0;
-    font-size: 1.1em;
+.card {
+    border: 1px solid #666; /* Slightly darker border for subtle contrast */
+    border-radius: 2vh;
+    background-color: #282828; /* Slightly lighter than announcements */
+    padding: 3vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
-.parents p {
-    margin: 5px 0;
-    font-size: 0.9em;
-    line-height: 1.4;
-    display: flex;
-    margin-bottom: 30px;
+.card-title {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #ffa500; /* Use a highlight color for titles */
 }
 
-.engagements img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+.card-description {
+    font-size: larger;
+    font-weight: 400;
+    color: #d3d3d3; /* Softer gray for better readability */
 }
 
-.engagements img:nth-child(1) {
-    margin-right: 10px;
-    width: 25px;
+.announcements a {
+    text-decoration: underline;
+    color: #ffa500; /* Bright color for links */
+    font-weight: bold;
+    transition: color 0.2s; /* Smooth color transition */
 }
 
-.date {
-    font-size: 0.8em;
-    color: gray;
+.announcements a:hover {
+    color: #ffffff; /* Highlight link on hover */
 }
 
-#CommenterStyle {
-    box-shadow: 5px 5px 15px black;
+.Projects {
+    margin: 5vh auto;
+    padding: 20px;
+    background-color: #2f2f2f;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 80%; /* Center-align with width constraint */
 }
 
-.head {
-    box-shadow: 5px 5px 15px black;
-    border-radius: 20px;
-    background: rgb(63, 63, 63);
-    padding: 15px;
+.FlappyBirdProject, .TheJasminDragonProject {
+    margin: 2vh auto;
+    padding: 20px;
+    background-color: #383838;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.FlappyBirdProject:hover, .TheJasminDragonProject:hover {
+    transform: scale(1.03); /* Enlarge slightly */
+    background-color: #4b4b4b; /* Brighter hover effect */
+}
+
+.FlappyBirdProject h2, .TheJasminDragonProject h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.FlappyBirdProject button, .TheJasminDragonProject button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #282828;
+    color: white;
+    border: 2px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.FlappyBirdProject button:hover, .TheJasminDragonProject button:hover {
+    background-color: #ffa500;
+    color: black;
+    transform: scale(1.05);
+}
+
+.JasminDragonPic img {
+    width: 65vh;
+    height: 35vh;
+    border: 2px solid #ffa500; /* Highlight border */
+    border-radius: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.JasminDragonPic img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(255, 165, 0, 0.7); /* Glow effect */
+}
+
+.AboutMe {
+    background-color: #1e1e1e; /* Dark background for contrast */
+    border: 2px solid #FFA500; /* Eye-catching yellow border */
+    border-radius: 20px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(246, 255, 0, 0.5); /* Subtle glowing effect */
+    margin: 2vh auto; /* Center the container */
+    max-width: 800px; /* Responsive width for better readability */
+    padding: 3vh; /* Add padding inside the section */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth hover effects */
+}
+
+.AboutMe:hover {
+    background-color: #242424; /* Slightly lighter background on hover */
+    transform: scale(1.02); /* Slight zoom-in effect */
+    box-shadow: 0 6px 12px #7c5100; /* Enhance glow on hover */
+}
+
+.AboutMe h2 {
+    font-size: 2rem;
+    color: #FFA500; /* Bright yellow for emphasis */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Spacing below the heading */
+    text-align: center; /* Center the headline */
+}
+
+.AboutMe p {
+    font-size: 1.2rem;
+    color: #ffffff; /* White text for readability */
+    margin-bottom: 1rem; /* Spacing between paragraphs */
+    line-height: 1.6; /* Improved readability */
+}
+
+.AboutMe a {
+    color: #ff3223; /* Bright red for the YouTube link */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline for a cleaner look */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.AboutMe a:hover {
+    color: #ff6347; /* Change to a lighter red on hover */
+}
+
+.AboutMe a:nth-of-type(2) {
+    color: #2600ff; /* Bright blue for Discord link */
+}
+
+.AboutMe a:nth-of-type(2):hover {
+    color: #4682b4; /* Change to a lighter blue on hover */
 }

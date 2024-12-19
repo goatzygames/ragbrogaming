@@ -1,3 +1,4 @@
+
 function DownButtonScroll() {
     document.getElementById("ProjectsTarget").scrollIntoView({
         behavior: "smooth",
@@ -86,6 +87,7 @@ function addPost() {
 
     // Ensure there's a message to post
     if (!userComment.value.trim()) return;
+    if(!userName.value) {return;}
 
     // Set the user name from the input
     userId.name = userName.value.trim() || "Anonymouse"; // If no name, set default to "Anonymouse"
@@ -156,10 +158,8 @@ function sendEmail(userId) {
         });
 }
 
-// Attach event listener to the publish button
 publishBtn.addEventListener("click", function(){
-        // Ensure the userName (email) is valid
-        if (!userName.value || userName.value.trim() === "default@gmail.com") {
+        if (!userName.value || userName.value.trim() == "default@gmail.com") {
             alert("Please enter your actual email so I can contact you when I see the request.");
             console.log("Invalid email entered");
             return;
